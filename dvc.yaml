@@ -35,3 +35,15 @@ stages:
     - src/scripts/train_model.py
     outs:
     - models/model.pkl
+  evaluate:
+    cmd: python3 src/scripts/evaluate_model.py
+    deps:
+    - data/processed_data/X_test_scaled.csv
+    - data/processed_data/y_test.csv
+    - models/model.pkl
+    - src/scripts/evaluate_model.py
+    outs:
+    - data/predictions.csv
+    metrics:
+    - metrics/scores.json:
+        cache: false
