@@ -1,0 +1,8 @@
+pandas 
+numpy
+joblib
+scikit-learn 
+dvc[gs]
+dvc[ssh]
+setuptools
+pytest
