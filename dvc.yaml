@@ -9,6 +9,7 @@ stages:
     - data/processed_data/X_train.csv
     - data/processed_data/y_test.csv
     - data/processed_data/y_train.csv
+    
   normalize:
     cmd: python3 src/scripts/normalize.py
     deps:
@@ -26,6 +27,7 @@ stages:
     - src/scripts/grid_search.py
     outs:
     - models/best_params.pkl
+   
   train:
     cmd: python3 src/scripts/train_model.py
     deps:
